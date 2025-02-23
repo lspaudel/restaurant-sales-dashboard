@@ -66,3 +66,16 @@ Run the following command to check if the driver is installed correctly:
 ```sh
 odbcinst -q -d -n "ODBC Driver 17 for SQL Server"
 ```
+
+## 📊 Running the Streamlit Dashboard
+### 1️⃣ Install Dependencies
+Navigate to your project directory and install the required Python packages:
+```bash
+pip install -r requirements.txt
+```
+### 2️⃣ Run the Dashboard
+Launch the Streamlit dashboard with:
+```sh 
+streamlit run app.py
+```
+The dashboard will open in your browser, displaying **sales trends, customer insights, and ratings**.
