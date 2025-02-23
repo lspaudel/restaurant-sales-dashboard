@@ -11,6 +11,19 @@ This project is a **live interactive dashboard** for tracking restaurant sales, 
 - 🐳 **Dockerized Database**: SQL Server runs inside a **Docker container** for easy setup.
 
 ---
+### Dashboard Image
+Below is a screenshot of the dashboard. The dashboard displays the total revenue, delivery orders, customer count, average order value, gross margin, and net profit. It also includes several charts that represent:
+
+![Dashboard Screenshot](./images/dashboard.png)
+This is a sales dashboard for Pizza House, visualizing various key metrics and trends. 
+
+**Number of customers by city** – A bar chart showing the distribution of customers across different cities.
+**Total sold items by food category** – A pie chart that shows the breakdown of food items sold.
+**Average Rating Trends** (not shown in the image) – A bar chart tracking the average customer ratings by week.
+**Sales Trends** (not shown in the image)– A line chart that shows sales trends over time.
+
+And many more can be added to further enhance the insights provided by the dashboard.
+
 
 ## 🏗 Setup Instructions
 
