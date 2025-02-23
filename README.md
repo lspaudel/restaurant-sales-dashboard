@@ -51,3 +51,18 @@ If you're on macOS, install the **ODBC driver**:
 ```bash
 brew install unixODBC
 export DYLD_LIBRARY_PATH=/opt/homebrew/opt/unixodbc/lib:$DYLD_LIBRARY_PATH
+```
+### 7️⃣ Install Microsoft ODBC Driver 17
+
+Run the following commands to install Microsoft ODBC Driver 17:
+```sh
+brew tap microsoft/mssql-release https://github.com/Microsoft/homebrew-mssql-release
+brew update
+HOMEBREW_NO_AUTO_UPDATE=1 brew install msodbcsql17
+```
+✅ Verify the Installation
+
+Run the following command to check if the driver is installed correctly:
+```sh
+odbcinst -q -d -n "ODBC Driver 17 for SQL Server"
+```
