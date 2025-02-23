@@ -1,0 +1,29 @@
+item_id,item_name,category,size,price,sku
+ITEM_001,Chocolate Brownie,Desserts,Regular,2.99,RCP_001
+ITEM_002,Chocolate Cheesecake Cupcake,Desserts,Regular,2.49,RCP_002
+ITEM_003,Sandy's Amazing Chocolate Chunk Cookie,Desserts,Regular,2.99,RCP_003
+ITEM_004,Chewy Marshmallow Bar,Desserts,Regular,2.99,RCP_004
+ITEM_005,Plain Pizza,Pizza,8 inch,8.99,RCP_005
+ITEM_006,Plain Pizza,Pizza,14 inch,13.99,RCP_006
+ITEM_007,Plain Pizza,Pizza,18 inch,21.49,RCP_007
+ITEM_008,Hawaiian Pizza,Pizza,8 inch,11.49,RCP_008
+ITEM_009,Hawaiian Pizza,Pizza,14 inch,17.97,RCP_009
+ITEM_010,Hawaiian Pizza,Pizza,18 inch,24.47,RCP_0010
+ITEM_011,Thick-Cut Pepperoni Pizza,Pizza,8 inch,10.24,RCP_0011
+ITEM_012,Thick-Cut Pepperoni Pizza,Pizza,14 inch,15.98,RCP_0012
+ITEM_013,Thick-Cut Pepperoni Pizza,Pizza,18 inch,23.98,RCP_0013
+ITEM_014,Veggie Pizza,Pizza,8 inch,12.74,RCP_0014
+ITEM_015,Veggie Pizza,Pizza,14 inch,19.96,RCP_0015
+ITEM_016,Veggie Pizza,Pizza,18 inch,28.96,RCP_0016
+ITEM_017,Mike's Hot Honey Pepperoni Pizza,Craft Pizza,8 inch,11.49,RCP_0017
+ITEM_018,Mike's Hot Honey Pepperoni Pizza,Craft Pizza,14 inch,17.97,RCP_0018
+ITEM_019,Mike's Hot Honey Pepperoni Pizza,Craft Pizza,18 inch,26.47,RCP_0019
+ITEM_020,Italian White Pizza,Craft Pizza,8 inch,10.24,RCP_0020
+ITEM_021,Italian White Pizza,Craft Pizza,14 inch,15.98,RCP_0021
+ITEM_022,Italian White Pizza,Craft Pizza,18 inch,23.98,RCP_0022
+ITEM_023,Sweet Baby-Q Chicken Pizza,Craft Pizza,8 inch,12.74,RCP_0023
+ITEM_024,Sweet Baby-Q Chicken Pizza,Craft Pizza,14 inch,19.96,RCP_0024
+ITEM_025,Sweet Baby-Q Chicken Pizza,Craft Pizza,18 inch,28.96,RCP_0025
+ITEM_026,Buffalo Chicken Pizza,Craft Pizza,8 inch,11.49,RCP_0026
+ITEM_027,Buffalo Chicken Pizza,Craft Pizza,14 inch,17.97,RCP_0027
+ITEM_028,Buffalo Chicken Pizza,Craft Pizza,18 inch,26.47,RCP_0028
