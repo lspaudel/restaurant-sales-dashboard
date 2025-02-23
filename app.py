@@ -12,21 +12,59 @@ load_dotenv(dotenv_path="sql_env")
 
 # Set Streamlit page config and styling
 st.set_page_config(page_title="Restaurant Dashboard", layout="wide")
+
 st.markdown(
     """
     <style>
-        .title {
-            text-align: center;
-            margin-top: -60px;
-        }
-        [data-testid="stAppViewContainer"] {
-            padding-top: 0px;
-        }
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+    
+    html, body, [class*="css"] {
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    .title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: #2c3e50;
+        margin-top: -60px;
+        padding: 20px 0;
+        background-color: #ecf0f1;
+        border-bottom: 2px solid #bdc3c7;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    [data-testid="stAppViewContainer"] {
+        padding-top: 0px;
+    }
+    
+    .stButton > button {
+        background-color: #3498db;
+        color: white;
+        border-radius: 5px;
+    }
+    
+    .stButton > button:hover {
+        background-color: #2980b9;
+    }
+    
+    .stSelectbox [data-baseweb="select"] {
+        border-radius: 5px;
+    }
+    
+    .stPlotlyChart {
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 10px;
+    }
     </style>
     """,
     unsafe_allow_html=True,
 )
-st.markdown("<h1 class='title'>Pizza House Dashboard</h1>", unsafe_allow_html=True)
+
+st.markdown('<h1 class="title">Pizza House Dashboard</h1>', unsafe_allow_html=True)
+
 
 # -------------------------
 # Data fetching functions
@@ -126,7 +164,10 @@ def get_rating_data():
     with get_db_connection() as conn:
         df = pd.read_sql(query, conn)
     # Add a color column based on average rating
-    df["color"] = df["avg_rating"].apply(lambda x: "red" if x < 5 else "yellow" if x < 7 else "green")
+    # df["color"] = df["avg_rating"].apply(lambda x: "red" if x < 5 else "yellow" if x < 7 else "green")
+    df["color_label"] = df["avg_rating"].apply(lambda x: "Rating < 5" if x < 5 else  "5 ≤ Rating < 7" if x < 7 else "Rating ≥ 7"
+    )
+
     return df
 
 # -------------------------
@@ -166,12 +207,12 @@ with col6:
 col_left, col_right = st.columns(2)
 with col_left:
     fig_city = px.bar(df_city, x="delivery_city", y="city_count", title="Number of Customers by City", template="seaborn")
-    fig_city.update_layout(title_x=0.4)
-    st.plotly_chart(fig_city, use_container_width=True)
+    fig_city.update_layout(title_x=0.3)
+    st.plotly_chart(fig_city, use_container_width=False)
 with col_right:
     fig_food = px.pie(df_food, values="total_sold", names="item_name", title="Total Sold Items by Food Category", template="seaborn")
-    fig_food.update_layout(title_x=0.4)
-    st.plotly_chart(fig_food, use_container_width=True)
+    fig_food.update_layout(title_x=0.3)
+    st.plotly_chart(fig_food, use_container_width=False)
 
 # Create three columns for additional charts
 col_a, col_b, col_c = st.columns(3)
@@ -185,7 +226,7 @@ with col_a:
         labels={"delivery_city": "City", "total_revenue": "Total Revenue", "delivery_count": "Delivery Count"},
         barmode="group"
     )
-    fig_delivery.update_layout(title_x=0.3)
+    fig_delivery.update_layout(title_x=0.2)
     st.plotly_chart(fig_delivery, use_container_width=True)
 
 with col_b:
@@ -195,15 +236,16 @@ with col_b:
         y="avg_rating", 
         title="Average Rating Trends", 
         template="seaborn",
-        color="color", 
-        color_discrete_map={"red": "red", "yellow": "yellow", "green": "green"}
+        color="color_label", 
+        # color_discrete_map={"red": "red", "yellow": "yellow", "green": "green"}
+        color_discrete_map={"Rating < 5": "red", "5 ≤ Rating < 7": "yellow", "Rating ≥ 7": "green"}
     )
-    fig_rating.update_layout(title_x=0.4)
+    fig_rating.update_layout(title_x=0.2)
     st.plotly_chart(fig_rating, use_container_width=True)
 
 with col_c:
     fig_daily_sales = px.line(df_daily_sales, x="order_date", y="sales", title="Sales Trends", template="seaborn")
-    fig_daily_sales.update_layout(title_x=0.4)
+    fig_daily_sales.update_layout(title_x=0.2)
     st.plotly_chart(fig_daily_sales, use_container_width=True)
 
 # Rerun the app after 5 seconds
